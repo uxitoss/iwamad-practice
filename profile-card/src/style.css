@@ -1,0 +1,134 @@
+
+body {
+  background-color: #f5f7fb;
+  padding: 20px 40px;/*padding inside the main block*/
+}
+
+header, main, footer {
+  position: relative;
+  z-index: 1;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding: 40px 0px;/*padding inside the text block, 40 at the top/bottom*/
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px
+}
+
+.card {
+  background-color: white;                
+  max-width: 600px;
+  box-shadow: 0 4px 12px #0000001a;
+  border-radius: 10px;
+}
+
+.style-1 {
+  background-color: rgb(211, 215, 255);   
+}
+
+.style-2 {
+  background-color: rgb(240, 211, 255);   
+}
+
+.style-3 {
+  background-color: rgb(255, 211, 248);   
+}
+  
+  .links {
+    display: flex;
+    justify-content: center;
+  }
+
+  .links a {
+    color: #6bb5ff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 10px;/*margin in the block of links*/
+  }
+  
+  .like-btn {
+        background-color: white;
+        border: 1px solid #e1e6f0; /*creates a 1-pixel-thick continuous border*/
+        padding: 8px 16px; /*padding inside the button: 8 px at the top/bottom, 16 px on the left/right*/
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        min-width: 80px;
+        text-align: center;
+    }
+
+    .like-btn.liked {
+        background-color: #000000;
+        color: white;
+        border-color: #000000; /*change border color*/
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /*make shadow under the button*/
+    }
+  
+  @media (max-width: 500px) {
+    .gallery {
+      grid-template-columns: 1fr;
+    }
+
+    .card {
+      margin: 20px 10px;/*margin outside the cards: 20px top/bottom, 10px right/left */
+      padding: 15px;/*padding inside the cards: 15 pixels at all sides*/
+    }
+  
+    .links {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+}
+
+.card h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 12px 0;/*margin outside the text*/
+}
+
+
+/*below is the section with the background design*/
+
+.blob {
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(90px);
+  position: fixed;
+  opacity: 0.7;
+  z-index: 0;
+}
+
+
+.blob-purple {
+  background-color: #d8b4fe;
+  top: -120px;
+  left: 200px;
+  animation: floatA 8s ease-in-out infinite alternate;
+}
+
+.blob-pink {
+  background-color: #fbcfe8;
+  bottom: -140px;
+  right: 200px;
+  animation: floatB 8s ease-in-out infinite alternate;
+}
+
+@keyframes floatA {
+  0% {transform: translate(0,0);}
+  50% {transform: translate(-120px, 0px);}
+  100% {transform: translate(-120px, 300px);}
+}
+
+@keyframes floatB {
+  0% {transform: translate(0,0);}
+  50% {transform: translate(200px, 0px);}
+  100% {transform: translate(200px, -400px);}
+}
