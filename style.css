@@ -1,0 +1,49 @@
+body {
+  background-color: white;
+}
+
+.card {
+    background-color: white;                
+    max-width: 600px;
+    box-shadow: 0 4px 12px #0000001a;
+    border-radius: 10px;
+  }
+  
+  .links {
+    display: flex;
+    justify-content: center;
+  }
+  
+  #like {
+        background-color: white;
+        border: 1px solid #ccc;
+        padding: 8px 16px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        min-width: 80px;
+        text-align: center;
+    }
+
+    #like.liked {
+        background-color: #6bb5ff;
+        color: white;
+        border-color: #6bb5ff;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+  @media (max-width: 500px) {
+    .card {
+      margin: 20px 10px;
+      padding: 15px;
+    }
+  
+    .links {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .like {
+        align-items: center;
+    }
+  }
