@@ -1,51 +1,20 @@
-import Header from './components/Header';
-import ProfileCard from './components/ProfileCard';
-import Footer from './components/Footer';
-
-type Profile = {
-  id: string;
-  name: string;
-  bio: string;
-  email: string;
-  github: string;
-  colorClass: string;
-};
-
-const bio =
-  "Hello! I'm a third-year student at the SITE. I used to be interested in website development, and I think this course will enhance my knowledge in this field.";
-
-const profiles: Profile[] = [
-  { id: 'p1', name: 'Starkova Veronika', bio, email: 'v_starkova@kbtu.kz', github: 'https://github.com/uxitoss', colorClass: 'style-1' },
-  { id: 'p2', name: 'Starkova Veronika', bio, email: 'v_starkova@kbtu.kz', github: 'https://github.com/uxitoss', colorClass: 'style-2' },
-  { id: 'p3', name: 'Starkova Veronika', bio, email: 'v_starkova@kbtu.kz', github: 'https://github.com/uxitoss', colorClass: 'style-3' },
-];
+import { Routes, Route } from 'react-router';
+import Layout from './components/Layout';
+import HomePage from './pages/HomePage';
+import SkillsPage from './pages/SkillsPage';
+import ContactPage from './pages/ContactPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
   return (
-    <>
-      <div className="blob blob-purple"></div>
-      <div className="blob blob-pink"></div>
-      <Header title="3rd week of course" />
-      <main>
-        {profiles.length === 0 ? (
-          <p>No profiles yet</p>
-        ) : (
-          <div className="gallery">
-            {profiles.map((profile) => (
-              <ProfileCard
-                key={profile.id}
-                name={profile.name}
-                bio={profile.bio}
-                email={profile.email}
-                github={profile.github}
-                colorClass={profile.colorClass}
-              />
-            ))}
-          </div>
-        )}
-      </main>
-      <Footer year={2026} name="Starkova Veronika" />
-    </>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path="skills" element={<SkillsPage />} />
+        <Route path="contact" element={<ContactPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Route>
+    </Routes>
   );
 }
 

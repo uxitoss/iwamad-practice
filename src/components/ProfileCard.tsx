@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import ProfileLink from './ProfileLink';
+import LikeButton from './LikeButton';
 
 type ProfileCardProps = {
   name: string;
@@ -10,11 +10,6 @@ type ProfileCardProps = {
 };
 
 function ProfileCard({ name, bio, email, github, colorClass }: ProfileCardProps) {
-  const [liked, setLiked] = useState(false);
-
-  function handleLikeClick() {
-    setLiked(!liked);
-  }
 
   type LinkItem = {
     id: string;
@@ -39,13 +34,8 @@ function ProfileCard({ name, bio, email, github, colorClass }: ProfileCardProps)
                 <ProfileLink key={link.id} label={link.label} url={link.url} />
             ))
         )}
-        </div>
-        <button
-            className={liked ? 'like-btn liked' : 'like-btn'}
-            onClick={handleLikeClick}
-        >
-        {liked ? 'Liked' : 'Like'}
-      </button>
+      </div>
+      <LikeButton />
     </div>
   );
 }

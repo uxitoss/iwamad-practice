@@ -105,6 +105,22 @@ main {
   flex: 1; 
 }
 
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 10px 0;
+}
+
+nav a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.home-single {
+  max-width: 600px;
+  margin: 0 auto;
+}
 
 /*below is the section with the background design*/
 
