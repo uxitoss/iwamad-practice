@@ -6,6 +6,9 @@ const skills: Skill[] = [
   { id: 's3', name: 'JavaScript' },
   { id: 's4', name: 'React' },
   { id: 's5', name: 'TypeScript' },
+  { id: 's6', name: 'Python' },
+  { id: 's7', name: 'C++' },
+  { id: 's8', name: 'C#' },
 ];
 
 function SkillsPage() {
