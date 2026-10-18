@@ -1,3 +1,5 @@
+import Tag from '../components/ui/Tag';
+
 type Skill = { id: string; name: string };
 
 const skills: Skill[] = [
@@ -20,7 +22,9 @@ function SkillsPage() {
       ) : (
         <ul>
           {skills.map((skill) => (
-            <li key={skill.id}>{skill.name}</li>
+            <li key={skill.id}>
+              <Tag label={skill.name} />
+            </li>
           ))}
         </ul>
       )}
